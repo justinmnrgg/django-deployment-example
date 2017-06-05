@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+
+  <h1>Register dulu Asuransimu</h1>
+    <form enctype="multipart/form-data" action="{% url 'asuransi:register' %}" method="post">
+        {{ user_form.as_p }}
+        {{ asuransi_form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}

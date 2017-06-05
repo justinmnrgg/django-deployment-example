@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HospitalReview.co</title>
+    <script src="{% static 'dist/css/bootstrap.css' %}"></script>
+    <script src="{% static 'dist/css/bootstrap.min.css' %}"></script>
+    <script src="{% static 'dist/css/bootstrap-grid.css' %}"></script>
+    <script src="{% static 'dist/css/bootstrap-reboot.css' %}"></script>
+    <script src="{% static 'dist/css/signin.css' %}"></script>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'utama:home' %}">Home</a>
+        {% if not request.session.login %}
+            <a href="{% url 'login' %}">Login</a>
+            {% else %}
+            <a href="{% url 'logout' %}">Logout</a>
+        {% endif %}
+    </nav>
+    {% block body_block %}
+
+    {% endblock %}
+</body>
+</html>

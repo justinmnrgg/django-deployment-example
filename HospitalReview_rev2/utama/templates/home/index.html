@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+    {% for rumah_sakit in rumah_sakits %}
+        <li>
+            <ul>{{ rumah_sakit }}</ul>
+        </li>
+    {% endfor %}
+{% endblock %}
